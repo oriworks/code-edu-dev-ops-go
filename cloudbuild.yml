@@ -1,10 +1,12 @@
 steps:
-- id: "Build"
-  name: "gcr.io/cloud-builders/docker"
-  args: ["build", "--tag=gcr.io/$PROJECT_ID/sum_calculator", "."]
 
-- id: "Test"
-  name: "gcr.io/${PROJECT_ID}/sum_calculator"
-  args: ["go", "test"]
+- id: 'Build'
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/sum_calculator', '.']
 
-images: ["gcr.io/$PROJECT_ID/sum_calculator"]
+- id: 'Test'
+  name: 'gcr.io/${PROJECT_ID}/sum_calculator'
+  args: ['go', 'test']
+
+images: ['gcr.io/$PROJECT_ID/sum_calculator']
+tags: ['cloud-builders-oriworks']
